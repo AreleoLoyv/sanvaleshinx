@@ -5,8 +5,71 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
-    
+    <div class="window">
+        <!-- SCREEN -->
+        <div class="screen" id="screen">
+            <!--
+            SCREEN
+             |   
+             |---BACK       
+             |     |
+             |     |--- BACKGROUND ->   background
+             |     |
+             |     |--- TELÓN DE FONDO -> back_curtain
+             |
+             |---MAIN 
+             |     |
+             |     |--- PIZARRON -> board
+             |     |
+             |     |--- PERSONAJES  -> pjs
+             |     |        |
+             |     |        |--- PERSONAJE DE FONDO -> pj_background
+             |     |        |
+             |     |        |--- PERSONAJE IZQUIERDA -> pj_left
+             |     |        |
+             |     |        |--- PERSONAJE DERECHA -> pj_right
+             |     |
+             |     |
+             |     |--- TELÓN -> main_curtain
+             |
+             |---FRONT
+                   |
+                   |--- CAJA DE DIALOGO -> dialogbox
+                   |        |
+                   |        |--- IMAGEN PERSONAJE -> dialogbox_pj 
+                   |        |
+                   |        |--- TEXTO  -> dialogbox_dialog
+                   |
+                   |
+                   |--- TELÓN -> front_curtain
+
+            -->
+            
+            <!-- <div class="back" id="back">
+                <div class="background" id="background"></div>
+                <div class="back_curtain" id="back_curtain"></div>
+            </div>
+            <div class="main" id="main">
+                <div class="board" id="board"></div>
+                <div class="pjs" id="pjs">
+                    <div class="pj_background" id="pj_background"></div>
+                    <div class="pj_left" id="pj_left"></div>
+                    <div class="pj_right" id="pj_right"></div>
+                </div>
+                <div class="main_curtain" id="main_curtain"></div>
+            </div> -->
+            <div class="front" id="front">
+                <div class="dialogbox" id="dialogbox">
+                    <div class="dialogbox_pj" id="dialogbox_pj"></div>
+                    <div class="dialogbox_dialog" id="dialogbox_dialog"></div>
+                </div>
+                <div class="front_curtain" id="front_curtain"></div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/core.js"></script>
 </body>
 </html>

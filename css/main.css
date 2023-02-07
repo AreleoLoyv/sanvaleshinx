@@ -1,0 +1,248 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: 'Staatliches', cursive;
+}
+
+/*
+    CORE STYLE
+*/
+
+.window{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.screen{
+    position: absolute;
+    background-color: black;
+    color: red;
+    width: 100vw;
+    height: 166.66vw;
+}
+
+/* BACK */
+
+.back{
+    /* position:relative;
+    width: 100vw;
+    height: 75vw; */
+}
+
+.background{
+
+}
+
+.back_curtain{
+
+}
+
+/* MAIN */
+
+.main{
+    /* position:relative;
+    width:100vw;
+    height: 100vh; */
+}
+
+.board{
+
+}
+
+/* --------PJS        */
+
+.pjs{
+
+}
+
+.pj_background{
+
+}
+
+.pj_left{
+
+}
+
+.pj_right{
+
+}
+
+/* --------PJS END     */
+
+.main_curtain{
+
+}
+
+/* FRONT */
+
+.front{
+    background-color: red;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: space-around;
+    align-items: flex-end
+}
+
+/* -------- DIALOGBOX            */
+
+.dialogbox{
+    height:30%;
+    width: 100%;
+    border: 1vw white solid;
+}
+
+.dialogbox_pj{
+/* width: 0;
+    height: 0; */
+}
+
+.dialogbox_dialog{
+    /* width: 0;
+    height: 0; */
+}
+
+/* -------- DIALOGBOX END        */
+
+.front_curtain{
+    position: absolute;
+    /* width: 0;
+    height: 0; */
+}
+
+/*
+
+*/
+
+.back, .main, .front{
+    width: 100%;
+    height: 100%;
+}
+
+/* FONT */
+
+.screen{
+    font-size: 10vw;
+}
+
+@media screen and (min-width: 60vh) {
+
+/*
+
+        ___________________________
+       |       |           |       |
+       |       |   SCREEN  |       |
+       |       |           |       |
+       |_______|___________|_______|
+
+*/
+
+    .window{
+        flex-direction: row;
+    }
+
+
+    .screen{
+        position: absolute;
+        width: 60vh;
+        height: 100vh;
+    }
+
+ 
+    
+/* BACK */
+
+.back{
+
+}
+
+.background{
+    
+}
+
+.back_curtain{
+    
+}
+
+/* MAIN */
+
+.main{
+    /* width: 133.3vh;
+        height: 100vh; */
+}
+
+.board{
+    
+}
+
+/* --------PJS        */
+
+.pjs{
+    
+}
+
+.pj_background{
+    
+}
+
+.pj_left{
+    
+}
+
+.pj_right{
+    
+}
+
+/* --------PJS END     */
+
+.main_curtain{
+    
+}
+
+/* FRONT */
+
+.front{
+    background-color: orange;
+    position: absolute;
+    /* width: 133.3vh;
+    height: 100vh; */
+    width: 100%;
+    height: 100%;
+}
+
+/* -------- DIALOGBOX            */
+
+.dialogbox{
+
+    border: 1.33vh white solid;
+}
+
+.dialogbox_pj{
+    width: 0;
+}
+
+.dialogbox_dialog{
+    width: 0;
+}
+
+/* -------- DIALOGBOX END        */
+
+.front_curtain{
+
+    /* background-color: red; */
+    margin-bottom: 6.66%;
+}   
+
+    
+}
+
