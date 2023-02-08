@@ -30,7 +30,7 @@ html{
     width:100vw;
     height: 100vh;
     background-color: bisque;
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     align-content: space-around;
     flex-direction: column;
@@ -134,7 +134,7 @@ html{
     background-image: url("/img/peluche.png");
     background-size: contain;
     transform: rotate(60deg);
-    display: none;
+    /* display: none; */
 }
 
 /* -------- DIALOGBOX            */
@@ -210,6 +210,24 @@ html{
     border-radius: 5%;
 }
 
+.aviso{
+    background-color: rgba(0, 0, 0, 0.63);
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: space-around;
+}
+
+.aviso img{
+margin-bottom: 20%;
+    width: 50%;
+    height: 40%;
+    opacity: 0.8;
+}
 
 @media screen and (min-width: 60vh) {
 
