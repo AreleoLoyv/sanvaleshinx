@@ -41,7 +41,7 @@ var jueguito = setInterval(function(){
             console.log(accionTurbo);
         }else{
             accionTurbo = false;
-            alert("Oiga se atoró :''³ Las autoridades ya estan en camino");
+            alert("Los sentimos, la maquina esta presentando fallos :'³ ¡AYUDA, SE ATORÓ!");
             
         }
     }
