@@ -175,10 +175,10 @@ function next(){
     music.play();
 }
 
-// document.getElementById("dialogbox").addEventListener("touchstart",boton);
-// document.getElementById("dialogbox").addEventListener("touchend",lag);
-// document.getElementById("dialogbox").addEventListener("mousedown",boton);
-// document.getElementById("dialogbox").addEventListener("mouseup",lag);
+document.getElementById("dialogbox").addEventListener("touchstart",boton);
+document.getElementById("dialogbox").addEventListener("touchend",lag);
+document.getElementById("dialogbox").addEventListener("mousedown",boton);
+document.getElementById("dialogbox").addEventListener("mouseup",lag);
 
-// document.getElementById("next").addEventListener("mousedown",sig);
-// document.getElementById("next").addEventListener("touchstart",sig);
+document.getElementById("next").addEventListener("mousedown",sig);
+document.getElementById("next").addEventListener("touchstart",sig);
