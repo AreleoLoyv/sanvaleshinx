@@ -7,6 +7,8 @@ var parameters = {
     "pick":false
 };
 
+var pel= false;
+
 const music = new Audio("assets/audio/poyo1.mp3");
 music.loop = true;
 music.pause();
@@ -24,18 +26,24 @@ var jueguito = setInterval(function(){
     document.getElementById("gancho").style.left = parameters.count+"%";
     if(accionTurbo){
         
-        if(parameters.count < 70){
-            if(parameters.vel < 1){
-                parameters.vel += 0.005;
-            }
+        if(!pel){
+            if(parameters.count < 70){
+                if(parameters.vel < 1){
+                    parameters.vel += 0.005;
+                }
 
-            parameters.count += parameters.vel;
+                parameters.count += parameters.vel;
+            }
+            music.pause();
+            music.currentTime = 0;
+            musicA.play();
+            console.log(parameters.count);
+            console.log(accionTurbo);
+        }else{
+            accionTurbo = false;
+            alert("Oiga se atoró :''³ Las autoridades ya estan en camino");
+            
         }
-        music.pause();
-        music.currentTime = 0;
-        musicA.play();
-        console.log(parameters.count);
-        console.log(accionTurbo);
     }
 },30);
 
@@ -59,13 +67,13 @@ function lag(){
     document.oncontextmenu = function(){return false}
     //CÓDIGO
     if(parameters.count < 32){
-        musicA.pause();
-        musicA.currentTime = 0;
-        music.play();
-        music.currentTime = 0;
-        alert("Manten presionado el boton hasta que llegue a los peluches");
-        parameters.count = 13;
-        parameters.vel = 0;
+            musicA.pause();
+            musicA.currentTime = 0;
+            music.play();
+            music.currentTime = 0;
+            alert("Manten presionado el boton hasta que llegue a los peluches");
+            parameters.count = 13;
+            parameters.vel = 0;
     }else{
         pick();
         document.getElementById("dialogbox").removeEventListener("touchstart",boton);
@@ -137,6 +145,7 @@ function loot(){
             musicA.pause();
             musicA.currentTime = 0;
             musicW.play();
+            pel = true;
             waiting(function(){alert("TE GANASTE UN PELUSHINX :³")},1000);
                         
             document.getElementById("dialogbox").addEventListener("touchstart",boton);
