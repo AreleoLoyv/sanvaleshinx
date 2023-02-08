@@ -127,6 +127,7 @@ html{
 
 .premio{
     position:absolute;
+    background-repeat: no-repeat;
     top: 60%;
     width: 100%;
     height: 100%;
