@@ -140,11 +140,11 @@ function loot(){
                 parameters.count -= parameters.vel;
            
         }else{
-            document.getElementById("gancho").style.left = "13%";
-            clearInterval(gancho);
             musicA.pause();
             musicA.currentTime = 0;
             musicW.play();
+            document.getElementById("gancho").style.left = "13%";
+            clearInterval(gancho);
             pel = true;
             waiting(function(){alert("TE GANASTE UN PELUSHINX :³")},1000);
                         
