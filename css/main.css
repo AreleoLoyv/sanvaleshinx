@@ -1,10 +1,26 @@
+@font-face {
+    font-family: 'Worksans';
+    src: url('/assets/fonts/WorkSans-VariableFont_wght.ttf');
+}
+
+
+.stats{
+    position: fixed;
+    color: white;
+    top: 0;
+}
+
 *{
     box-sizing: border-box;
+    font-family: Worksans,Arial, Helvetica, sans-serif;
+
     margin: 0;
     padding: 0;
 }
 
+
 html{
+    
     background-color: black;
     font-size: 62.5%;
     font-family: 'Staatliches', cursive;
@@ -29,7 +45,8 @@ html{
     top: 0;
     width:100vw;
     height: 100vh;
-    background-color: bisque;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.801);
     display: flex;
     flex-wrap: wrap;
     align-content: space-around;
@@ -37,64 +54,70 @@ html{
     justify-content: center;
 }
 
+
+.msg{
+    position: absolute;
+    font-size: 2vw;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.801);
+    display: none;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+}
+
+.boxmsg{
+    height: 80%;
+    width: 60%;
+    border: 1px solid white;
+    background-color: wheat;
+    border-radius: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content:space-around;
+}
+
+.boxmsg *{
+    text-align: center;
+    font-weight:bold;
+    user-select: none;
+}
+
+.titlemsg{
+    /* margin: 2vh 4vh 0vh 4vh; */
+    margin: 6% 12% 0% 12%;
+    font-size: 5.12vw;
+}
+
+.prize{
+    background-repeat: no-repeat;
+    background-size:contain;
+    height: 38.46vw;
+    width: 38.46vw;
+}
+
+.descripmsg{
+    font-size: 120%;
+    margin: 0 10% 0 10%;
+    text-align: left;
+}
+
+.again{
+    border: 1px solid greenyellow;
+    background-color: greenyellow;
+    font-size: 3.2vw;
+    border-radius: 2rem;
+    padding: 5% 10%;
+    margin-bottom: 5%;
+}
+
 .screen{
     position: absolute;
-    color: red;
     width: 100vw;
-    height: 166.66vw;
-}
-
-
-/* BACK */
-
-.back{
-    /* position:relative;
-    width: 100vw;
-    height: 75vw; */
-}
-
-.background{
-
-}
-
-.back_curtain{
-
-}
-
-/* MAIN */
-
-.main{
-    /* position:relative;
-    width:100vw;
-    height: 100vh; */
-}
-
-.board{
-
-}
-
-/* --------PJS        */
-
-.pjs{
-
-}
-
-.pj_background{
-
-}
-
-.pj_left{
-
-}
-
-.pj_right{
-
-}
-
-/* --------PJS END     */
-
-.main_curtain{
-
+    height: 128.205vw;
 }
 
 /* FRONT */
@@ -102,7 +125,7 @@ html{
 .front{
     width: 100%;
     height: 100%;
-    background-image: url("/img/backT.png");
+    background-image: url("/img/back.png");
     background-size: contain;
     display: flex;
     flex-wrap: wrap;
@@ -115,7 +138,7 @@ html{
 .mirror{
     position:absolute;
     top: 0;
-    background-image: url("/img/frontT.png");
+    background-image: url("/img/front.png");
     background-size: contain;
     width: 100%;
     height: 100%;
@@ -126,13 +149,14 @@ html{
 }
 
 .premio{
-    position:absolute;
-    background-repeat: no-repeat;
-    top: 60%;
-    width: 100%;
-    height: 100%;
-    background-image: url("/img/peluche.png");
-    background-size: contain;
+    position:relative;
+    background-repeat: repeat;
+    top: 88%;
+    left: 25%;
+    width: 55%;
+    height: 16%;
+    background-image: url("/img/plush/chinx.png");
+    background-size: 100%;
     transform: rotate(60deg);
     display: none;
 }
@@ -144,17 +168,16 @@ html{
     justify-self: center;
     height:12%;
     width: 20%;
-    border: 1px black solid;
-    border-radius: 100%;
-    margin-bottom: 12%;
-
+    background-image: url("/img/boton.png");
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position-x: 0%;
     text-align: center;
-    font-size: 3vw;
-    padding-top: 4vw;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none; 
+    margin-bottom: 4%;
 }
 
 
@@ -162,14 +185,15 @@ html{
 
 .gancho{
     position:absolute;
-    top: 20%;
-    left: 40%;
-    height:12%;
-    width: 20%;
-    border-radius: 100%;
-    border: 1px black solid;
+    top: -60%;
+    left: 60%;
+    height:100%;
+    width: 38%;
     /* background-color: red; */
-    margin-bottom: 6.66%;
+    background-image: url("/img/gancho.png");
+    background-size: 200%;
+    background-repeat: no-repeat;
+    background-position-x: 100%;
     /* width: 0;
     height: 0; */
 }
@@ -178,37 +202,45 @@ html{
 
 */
 
-.screen{
-    position: absolute;
-    color: red;
-    width: 100vw;
-    height: 166.66vw;
-}
-
-
 
 /* FONT */
 
 .screen{
+    position: absolute;
+    width: 100vw;
+    height: 128.205vw;
     font-size: 10%;
 }
 
 .presentacion, .next{
-    width: 50vw;
-    font-size: 5vw;
+    width: 80vw;
+    font-size: 4vw;
 }
 
 .presentacion{
+    font-size: 4vw;
+    height: 90vw;
     text-align: justify;
 }
 
-.next{
-
-    margin-top: 2vw;
+.titulo{
+    font-size: 180%;
     text-align: center;
-    border: 1px black solid;
-    border-radius: 5%;
 }
+
+.start .msg{
+    user-select: none;
+}
+
+.next{
+    text-align: center;
+    color: black;
+    border: 1px white solid;
+    background-color: white;
+    border-radius: 2%;
+    user-select: none;
+}
+
 
 .aviso{
     background-color: rgba(0, 0, 0, 0.63);
@@ -233,7 +265,7 @@ html{
     top: 20%
 }
 
-@media screen and (min-width: 60vh) {
+@media screen and (min-width: 78vh) {
 
 /*
 
@@ -251,75 +283,25 @@ html{
 
 
     .screen{
-        width: 60vh;
+        width: 78vh;
         height: 100vh;
     }
 
     .presentacion, .next{
-        width: 50vh;
+        width: 60vh;
+        
+    }
+
+    .presentacion{
+        font-size: 4vh;
+        height: 70vh;
+    }
+    .next{
+        text-align: center;
         font-size: 5vh;
     }
 
-    .next{
-        margin-top: 2vh;
-        text-align: center;
-    }
-    
-/* BACK */
-
-.back{
-
-}
-
-.background{
-    
-}
-
-.back_curtain{
-    
-}
-
-/* MAIN */
-
-.main{
-    /* width: 133.3vh;
-        height: 100vh; */
-}
-
-.board{
-    
-}
-
-/* --------PJS        */
-
-.pjs{
-    
-}
-
-.pj_background{
-    
-}
-
-.pj_left{
-    
-}
-
-.pj_right{
-    
-}
-
-/* --------PJS END     */
-
-.main_curtain{
-    
-}
-
-/* FRONT */
-
 .front{
-
-    /* width: 133.3vh;
-    height: 100vh; */
     width: 100%;
     height: 100%;
 }
@@ -329,25 +311,13 @@ html{
 .dialogbox{
     text-align: center;
     font-size: 2vh;
-    padding-top: 3vh;
+
 }
 
-.dialogbox_pj{
-    width: 0;
-}
-
-.dialogbox_dialog{
-    width: 0;
-}
 
 /* -------- DIALOGBOX END        */
 
 .gancho{
-
-    height:12%;
-    width: 20%;
-    border-radius: 100%;
-    border: 1px black solid;
     /* background-color: red; */
     margin-bottom: 6.66%;
 }   
@@ -357,6 +327,30 @@ position: absolute;
 top: 0;
 }
 
-    
+
+
+.msg{
+    font-size: 2vh;
+}
+
+
+.titlemsg{
+    margin: 6% 12% 0% 12%;
+    font-size: 4vh;
+}
+
+.prize{
+    height: 30vh;
+    width: 30vh;
+}
+
+
+.again{
+
+    font-size: 2.5vh;
+
+}
+
+
 }
 
