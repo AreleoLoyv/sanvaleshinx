@@ -457,7 +457,7 @@ function push(){
     }
 }
 
-document.getElementById("prize").addEventListener("touchstart",push);
+// document.getElementById("prize").addEventListener("touchstart",push);
 document.getElementById("prize").addEventListener("mousedown",push);
 // var accionTurbo = false;
 
