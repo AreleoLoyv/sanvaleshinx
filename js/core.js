@@ -57,6 +57,7 @@ let plush = [
     ["shinychinx","Un Shiny Peluchinx","Se acabó la tinta celeste, algún dia celebraremos el mes Shiny",""],
     ["zoey","Un Peluche Zoey","Asi es, se llama Zoey. Tiene problemas como la gente normal y mañana debe ir a trabajar",""],
     ["zorua","Un Peluche Zorua","Este Zorrito casi inicia una tercera guerra mundial y quizo volver a intenarlo este año",""],
+    ["chaini","Un Peluche Luxio Shiny","No lo vas a creer, hace un cosas tan 4K que son una cosa barabara. Sabemos que necesita una licencia de Windows","https://www.facebook.com/SandiaViolenta"]
 ];
 
 
