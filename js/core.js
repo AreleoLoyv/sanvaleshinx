@@ -22,7 +22,8 @@ var parameters = {
     "pick":false,
     "XinAction":false,
     "YinAction":false,
-    "OnOk":false,
+    "OnOk":false,   
+    "OnEnable":true,
 
     "isDakia":false,
     "beyDakia":false,
@@ -35,22 +36,22 @@ var parameters = {
 
 let plush = [
 //  file ,  Name , Description , url
-    ["angel","El Riolu de Galar","Si alguien se acerca a ti con malas intensiones, él te protegerá","https://www.facebook.com/people/El-Riolu-de-galar/100064145349481/"],
+    ["angel","El Riolu de Galar","Si alguien se acerca a ti con malas intensiones, él te protegerá. Dale chocolate, buen chico","https://www.facebook.com/people/El-Riolu-de-galar/100064145349481/"],
     ["anto","Un Peluche AntonimouZ","Una serpientita muy talentosa, por su gorra diria que le gusta sonic","https://www.facebook.com/people/AntonimouZ/100064692324217/"],
-    ["chinx","Un Peluche Shinx","PeluShinx, por fin pudo salir de esa maquina una semana despues de San ValenShinx",""],
-    ["chinxOLD","Un Peluchinx antiguo","Parece que olvidaron quitarlo de la version de prueba",""],
-    ["cubito","Un Mudkip","Tienes un nuevo amigo, cuidalo mucho y el te cuidará. Creo que quiere que lo alañes :³","https://www.facebook.com/Maukiip"],
-    ["dakia","Otro Peluche Dakia?","Hey! el otro peluche de Dakia desapareció!","https://www.facebook.com/DakiatheEspurr"],
+    ["chinx","Un Peluche Shinx","PeluShinx, por fin pudo salir de esa maquina una semana despues de San ValenShinx (Edit: 2 semanas)",""],
+    ["chinxOLD","Un Peluchinx antiguo","Parece que olvidaron quitarlo de la version de prueba, ahora lo tienes como objeto de colección que valdrá mucho dentro de mil años",""],
+    ["cubito","Un Mudkip","Tienes un nuevo amigo, cuidalo mucho y el te cuidará. Creo que quiere que lo abrazes","https://www.facebook.com/Maukiip"],
+    ["dakia","Otro Peluche Dakia?","Hey! el otro peluche de Dakia desapareció! Al menos tienes este como recuerdo","https://www.facebook.com/DakiatheEspurr"],
     ["dakiareal","Un Peluche Dakia","Estas mirandolo de cerca porque es muy pequeño, tiene tantos detalles que parece real",""],
     ["emkra","Un Peluche Zorua de Limon","Algo me dice que si apagas las luces, brilla. También puede ocurrir que se escape, mejor no arriesgarse. Su nivel es un secreto",""],
-    ["espurrHD","Un Peluche Espurr HD","Es oficial de Nintendo y está en PNG para ti",""],
+    ["espurrHD","Un Peluche Espurr HD","Es oficial de Nintendo pero está en PNG para ti sin costo de envio.",""],
     ["jyra","Una Estrellita","Te acompañará, guiará en tu camino y te hará unos buenos momazos,","https://www.facebook.com/JykzzU"],
-    ["kiro","Un Zorrito Peluche Kiro","Es muy buena compañia","https://www.facebook.com/KiroZA26"],
+    ["kiro","Un Zorrito Peluche Kiro","Es muy buena compañia, no lo dejes solo y el nunca te dejará solo","https://www.facebook.com/KiroZA26"],
     ["luxio","Un Luxio Peluche","Es como Shinx pero más grande y enojado","https://www.facebook.com/LuxSmash"],
     ["moishinx","Un Maki Peluche","Siempre te ayudará cuando más lo necesites","https://www.facebook.com/MakiLuxray"],
     ["pops","Un Pops Peluche","Hay que cuidarlo porque contaminaron su habitad natural y ya no hace noticias","https://www.facebook.com/PopsElSirenito"],
     ["reno","Un renito Peluche","No se, se metió a una tienda y todos se alteraron","https://www.twitch.tv/123renitowo"],
-    ["shinxHD","Un Peluche Shinx HD","Ya no se esfuerzan como antes",""],
+    ["shinxHD","Un Peluche Shinx HD","Ya no se esfuerzan como antes, Cantidad por Calidad. Terrible",""],
     ["shinxhev","Un Peluche Shinx Half Life","Se llama Shinx pero parece Luxio, sospechoso(SUS). El Shinx adecuado en la red social equivocada puede causar que baje sus acciones","https://www.facebook.com/HolaSoyShinx"],
     ["shinxpawo","Un Peluche Shinx Powa","Es Admin, tiene el Powar de dar Ban. Que bueno que ahora lo controlas","https://www.facebook.com/TheFluffyCuteWorld"],
     ["shinychinx","Un Shiny Peluchinx","Se acabó la tinta celeste, algún dia celebraremos el mes Shiny",""],
@@ -75,7 +76,7 @@ function more(){
 };
 
 // variables
-var motor = setInterval(function(){rooting();if(parameters.debug){coordenadas()}},50);
+var motor = setInterval(function(){rooting();if(parameters.debug){coordenadas()}},25);
 let hook = document.getElementById("gancho");
 
 setInterval(function(){
@@ -149,8 +150,12 @@ function next(){
 // MAIN
 
 function btnON(event){
+    if(!parameters.OnEnable){
+        return null;
+    }
     perfectLoop(true);
     parameters.OnOk = true;
+    parameters.OnEnable = false;
     parameters.acceleration = 0.01;
     document.getElementById("dialogbox").style.backgroundPositionX = "100%";
     parameters.YinAction = true;
@@ -163,18 +168,21 @@ function btnON(event){
 }
 
 function btnOFF(){
+
     if(parameters.OnOk){ 
         parameters.YinAction = false;
         document.getElementById("dialogbox").style.backgroundPositionX = "0%";
         document.oncontextmenu = function(){return false}
         //CÓDIGO
         if(parameters.Y < parameters.stock){
+            parameters.OnEnable = true;
                 musicA.pause();
                 musicA.currentTime = 0;
                 music.play();
                 music.currentTime = 0;
                 alert("Manten presionado el boton hasta que llegue a los peluches");
         }else{
+            parameters.OnEnable = true;
             gancho.style.backgroundPositionX = "0%"
             waiting(stepOne,300);
             document.getElementById("dialogbox").removeEventListener("touchstart",btnON);
@@ -314,8 +322,8 @@ function selectPlush(){
             console.log("AÑADIDO "+n);
             listPlush[n] = n;
             parameters.last = n;
-            document.getElementById("premio").style.display = "flex";
-            document.getElementById("premio").style.backgroundImage = "url('/img/plush/"+plush[n][0]+".png')";
+            document.getElementById("premiod").style.display = "flex";
+            document.getElementById("premio").src = "/img/plush/"+plush[n][0]+".png";
             newsito = true;
         }else{
             console.log("OTRO NUMERO "+n);
@@ -323,11 +331,11 @@ function selectPlush(){
             if(parameters.isDakia && !parameters.beyDakia){
                 n = 5;
                 parameters.beyDakia = true;
-                document.getElementById("premio").style.transform = "rotate(60deg)";
-                document.getElementById("premio").style.top = "88%";
-                document.getElementById("premio").style.left = "25%";
-                document.getElementById("premio").style.width = "55%";
-                document.getElementById("premio").style.height = "16%";
+                document.getElementById("premiod").style.transform = "rotate(60deg)";
+                document.getElementById("premiod").style.top = "88%";
+                document.getElementById("premiod").style.left = "25%";
+                document.getElementById("premiod").style.width = "55%";
+                document.getElementById("premiod").style.height = "16%";
 
                 //             top: 88%;
     // left: 25%;
@@ -339,11 +347,11 @@ function selectPlush(){
                 n = 6;
                 parameters.isDakia = true;
 
-                document.getElementById("premio").style.transform = "rotate(0deg)";
-                document.getElementById("premio").style.top = "91%";
-                document.getElementById("premio").style.left = "31%";
-                document.getElementById("premio").style.width = "40%";
-                document.getElementById("premio").style.height = "12%";
+                document.getElementById("premiod").style.transform = "rotate(0deg)";
+                document.getElementById("premiod").style.top = "91%";
+                document.getElementById("premiod").style.left = "31%";
+                document.getElementById("premiod").style.width = "40%";
+                document.getElementById("premiod").style.height = "12%";
 
                 // top: 91%;
                 // left: 31%;
@@ -356,18 +364,33 @@ function selectPlush(){
 }
 
 function showMsg(){
+    var follow = document.getElementById("followme");
+    if(plush[parameters.last][3] != ""){
+        follow.style.display = "flex";
+        follow.addEventListener("click", () => {
+        window.open(plush[parameters.last][3], "_blank");
+        });
+    }else{
+        follow.style.display = "none";
+    }
     dating(parameters.last);
 }
 
 function dating(m){
     // comprobar
     ifAllPlush();
+    var priC = document.getElementById("prize");
     let n = m;
     document.getElementById("msg").style.opacity = 1;
     document.getElementById("msg").style.display = "flex";
+    getAnima("boxmsg","fosh");
     document.getElementById("titlemsg").textContent = plush[n][1];
-    document.getElementById("prize").style.backgroundImage = "url('/img/plush/"+plush[n][0]+".png')"
+    priC.src = "/img/plush/"+plush[n][0]+".png";
+    
     document.getElementById("descripmsg").textContent = plush[n][2];
+    
+    getAnima("prize","plim");
+    
     if(parameters.full){
         document.getElementById("again").removeEventListener("touchstart",game);
         document.getElementById("again").removeEventListener("mousedown",game);
@@ -389,7 +412,7 @@ function game(){
     document.getElementById("dialogbox").addEventListener("touchend",btnOFF);
     document.getElementById("dialogbox").addEventListener("mouseup",btnOFF);
     music.currentTime = 0;
-    document.getElementById("premio").style.display = "none";
+    document.getElementById("premiod").style.display = "none";
     music.play();
 
 }
@@ -397,7 +420,7 @@ function game(){
 function end(){
     document.getElementById("titlemsg").textContent = "¡FELICIDADES!";
     document.getElementById("titlemsg").style.marginBottom = "5%";
-    document.getElementById("prize").style.display = "none";
+    document.getElementById("prized").style.display = "none";
     document.getElementById("descripmsg").innerHTML= "CONSEGUISTE TODOS LOS MODELOS DE PELUCHES EN LA MAQUINA, ERES MUY PRO :³ <br> Muchas gracias por tomarte la molestia de completarlo<br><br>Eso fue todo, Fue un Honor que llegaras hasta aquí, si me tardé demasiado pensando que terminaria limite 1 día despues de San Valentin. Solo espero que te lo disfrutaras :³";
     document.getElementById("again").style.display = "none";
     document.getElementById("boxmsg").style.alignContent = "center";
@@ -415,6 +438,27 @@ function ifAllPlush(){
     }
 }
 
+
+function getAnima(e,a){
+    var f = document.getElementById(e);
+    f.classList.remove(a);
+    void f.offsetWidth; 
+    f.classList.add(a);
+}
+
+var ronchas = new Audio("assets/audio/push.mp3");
+
+function push(){
+    if(!parameters.isDakia || parameters.beyDakia)
+    {
+        ronchas.pause();
+        ronchas.currentTime = 0;
+        ronchas.play();
+    }
+}
+
+document.getElementById("prize").addEventListener("touchstart",push);
+document.getElementById("prize").addEventListener("mousedown",push);
 // var accionTurbo = false;
 
 
