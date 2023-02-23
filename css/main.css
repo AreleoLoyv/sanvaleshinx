@@ -157,6 +157,18 @@ html{
     justify-content: space-around;
 }
 
+
+.followme{
+    border: 1px white solid ;
+    border-radius: 1rem;
+    background-color: white;
+    padding: 5% 10% 5% 10%;
+    position: relative;
+    bottom: 0%;
+    left: 35%;
+    animation: fun 1.5s infinite;
+}
+
 .descripmsg{
     font-size: 120%;
     margin: 0 10% 0 10%;
@@ -240,6 +252,7 @@ html{
     -ms-user-select: none;
     user-select: none; 
     margin-bottom: 4%;
+    filter:brightness(80%);
 }
 
 
@@ -411,16 +424,6 @@ top: 0;
     width: 30vh;
 }
 
-.followme{
-    border: 1px white solid ;
-    border-radius: 1rem;
-    background-color: white;
-    padding: 5% 10% 5% 10%;
-    position: relative;
-    bottom: 0%;
-    left: 35%;
-    animation: fun 1.5s infinite;
-}
 
 .again{
 
