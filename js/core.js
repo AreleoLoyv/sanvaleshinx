@@ -40,7 +40,7 @@ let plush = [
     ["anto","Un Peluche AntonimouZ","Una serpientita muy talentosa, por su gorra diria que le gusta sonic","https://www.facebook.com/people/AntonimouZ/100064692324217/"],
     ["chinx","Un Peluche Shinx","PeluShinx, por fin pudo salir de esa maquina una semana despues de San ValenShinx (Edit: 2 semanas)",""],
     ["chinxOLD","Un Peluchinx antiguo","Parece que olvidaron quitarlo de la version de prueba, ahora lo tienes como objeto de colección que valdrá mucho dentro de mil años",""],
-    ["cubito","Un Mudkip","Tienes un nuevo amigo, cuidalo mucho y el te cuidará. Creo que quiere que lo abrazes","https://www.facebook.com/Maukiip"],
+    ["cubito","Un Mudkip","Tienes un nuevo amigo, cuidalo mucho y el te cuidará. Creo que necesita un apapacho","https://www.facebook.com/Maukiip"],
     ["dakia","Otro Peluche Dakia?","Hey! el otro peluche de Dakia desapareció! Al menos tienes este como recuerdo","https://www.facebook.com/DakiatheEspurr"],
     ["dakiareal","Un Peluche Dakia","Estas mirandolo de cerca porque es muy pequeño, tiene tantos detalles que parece real",""],
     ["emkra","Un Peluche Zorua de Limon","Algo me dice que si apagas las luces, brilla. También puede ocurrir que se escape, mejor no arriesgarse. Su nivel es un secreto",""],
